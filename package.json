@@ -4,12 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "esbuild src/index.tsx --bundle --minify --sourcemap --outfile=public/bundle.js",
+    "build:dev": "node esbuild.dev.js",
+    "start": "node esbuild.config.js -w",
+    "open": "wslview public/index.html"
   },
   "keywords": [],
   "author": "example",
   "license": "ISC",
   "devDependencies": {
-    "esbuild": "^0.15.8"
-  }
+    "esbuild": "^0.15.8",
+    "esbuild-serve": "^1.0.1"
+  },
+  "dependencies": {
+    "@types/react": "^18.0.20",
+    "@types/react-dom": "^18.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.8.3"
+  },
+  "type": "module"
 }
